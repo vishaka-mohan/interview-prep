@@ -1,0 +1,264 @@
+.infochunk{
+	position:relative;
+	left:100px;
+	top:-200px;
+	margin-left:200px;
+	
+	
+	
+}
+#makeblack{
+	color:black;
+}
+.subhead{
+	color:black;
+}
+.qdetails{
+	font-size:20px;
+}
+.jumbotron{
+ 
+	color:black;
+
+}
+
+.qlayoutbody{
+	background:rgba(152, 220, 216,0.4);
+	color:black;
+  font-family: "Lucida Console", Courier, monospace;
+  font-size: 110%;
+}
+.radio {
+  font-size: 2.25rem;
+  
+}
+
+#headingcent{
+	text-align:center;
+	font-family: 'Lobster', cursive;
+	
+}
+#qdiscbody{
+	background:white;
+	
+}
+#sp{
+	
+}
+#desc{
+	
+	font-family: 'Lobster', cursive;
+	font-size:25px;
+}
+#landingbody{
+	background:url('https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80');
+	background-repeat:no-repeat;
+	background-size:cover;
+}
+.landingbtn{
+	color:white;
+	font-size:20px;
+
+}
+#pos{
+	font-family: 'Lobster', cursive;
+}
+body {
+  background-color: white;
+  height: 100%;
+color:black;
+
+  
+}
+
+h1 {
+  font-size: 5em;
+  color: white;
+  text-transform: uppercase;
+}
+
+span {
+  border-right: .05em solid;
+  animation: caret 1s steps(1) infinite;
+}
+
+@keyframes caret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+
+#headingprofile{
+	font-size:30px;
+	padding-left:40px;
+
+}
+#friendlink{
+	font-size:15px;
+}
+
+#pos{
+	padding-top:250px;
+}
+#loginb{
+	margin-top:250px;
+	margin-left:250px;
+}
+
+
+
+#userdp{
+	border-radius:100%;
+	width:270px;
+	height:270px;
+}
+
+.allsubsdesign {
+  background: #f2f4f8;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 100vh;
+  font-family: "Open Sans";
+}
+
+.apti{
+  --bg-color: #ff0346;
+  --bg-color-light: #f27496;
+  --text-color-hover: #4C5656;
+  --box-shadow-color: rgba(255, 215, 97, 0.48);
+}
+
+.education {
+  --bg-color: #ffd861;
+  --bg-color-light: #ffeeba;
+  --text-color-hover: #4C5656;
+  --box-shadow-color: rgba(255, 215, 97, 0.48);
+}
+
+.credentialing {
+  --bg-color: #B8F9D3;
+  --bg-color-light: #e2fced;
+  --text-color-hover: #4C5656;
+  --box-shadow-color: rgba(184, 249, 211, 0.48);
+}
+
+.wallet {
+  --bg-color: #CEB2FC;
+  --bg-color-light: #F0E7FF;
+  --text-color-hover: #fff;
+  --box-shadow-color: rgba(206, 178, 252, 0.48);
+}
+
+.human-resources {
+  --bg-color: #DCE9FF;
+  --bg-color-light: #f1f7ff;
+  --text-color-hover: #4C5656;
+  --box-shadow-color: rgba(220, 233, 255, 0.48);
+}
+
+.card {
+  width: 220px;
+  height: 321px;
+  background: #fff;
+  border-top-right-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 14px 26px rgba(0,0,0,0.04);
+  transition: all 0.3s ease-out;
+  text-decoration: none;
+}
+
+.card:hover {
+  transform: translateY(-5px) scale(1.005) translateZ(0);
+  box-shadow: 0 24px 36px rgba(0,0,0,0.11),
+    0 24px 46px var(--box-shadow-color);
+}
+
+.card:hover .overlay {
+  transform: scale(4) translateZ(0);
+}
+
+.card:hover .circle {
+  border-color: var(--bg-color-light);
+  background: var(--bg-color);
+}
+
+.card:hover .circle:after {
+  background: var(--bg-color-light);
+}
+
+.card:hover p {
+  color: var(--text-color-hover);
+}
+
+.card:active {
+  transform: scale(1) translateZ(0);
+  box-shadow: 0 15px 24px rgba(0,0,0,0.11),
+    0 15px 24px var(--box-shadow-color);
+}
+
+.card p {
+  font-size: 19px;
+  color: #4C5656;
+  margin-top: 30px;
+  z-index: 1000;
+  transition: color 0.3s ease-out;
+}
+
+.circle {
+  width: 131px;
+  height: 131px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid var(--bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease-out;
+}
+
+.circle:after {
+  content: "";
+  width: 118px;
+  height: 118px;
+  display: block;
+  position: absolute;
+  background: var(--bg-color);
+  border-radius: 50%;
+  top: 7px;
+  left: 7px;
+  transition: opacity 0.3s ease-out;
+}
+
+.circle svg {
+  z-index: 10000;
+  transform: translateZ(0);
+}
+
+.overlay {
+  width: 118px;
+  position: absolute; 
+  height: 118px;
+  border-radius: 50%;
+  background: var(--bg-color);
+  top: 70px;
+  left: 50px;
+  z-index: 0;
+  transition: transform 0.3s ease-out;
+}
+
+
+#test{
+	padding-bottom:550px;
+	font-size:60px;
+	font-family: 'Lobster', cursive;
+}

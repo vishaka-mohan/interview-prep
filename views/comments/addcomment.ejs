@@ -1,0 +1,30 @@
+route to add comments
+<%- include("../partials/header")%>
+<div class="container">
+	<h2 style="text-align:center;">
+		Comment 
+	</h2>
+<form action="/discuss/<%=subject%>/<%=qid%>/comment/new" method="POST">
+<div style="width:30%;margin:0 auto">
+	
+  <div class="form-group">
+	  <label for="comment"><span class="review">Comment</span></label>
+    <input type="text" class="form-control" id="comment" name="text">
+  </div>
+	
+  <div class="form-group">
+	  <label for="author"><span class="review">Author</span></label>
+    <input type="text" class="form-control" id="author" name="author" value="<%=CurrentUser.username%>" readonly>
+  </div>
+	
+	 
+  
+  <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+</div>
+</form>
+	
+	<a href="#">Go Back</a>
+	
+</div>
+
+<%- include("../partials/footer")%>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>questions page</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript" src="/scripts/main.js"></script>	
+<!-- JS, Popper.js, and jQuery 
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6	G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+	
+-->
+
+
+
+
+<link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/cyborg/bootstrap.min.css">
+	<link rel="stylesheet" href="/stylesheets/app.css">
+
+</head>
+<body class="qlayoutbody">
+
+<div class="container">
+	
+		<h2 class="subhead">
+			Subject:<%=subject%>
+	</h2>
+		<br>
+		<form id="filter" action="/questions/filter/<%=CurrentUser._id%>">
+			
+			<p>Filter by category: </p>
+			<input type="radio" id="easy" name="filtercat" value="easy">
+			  <label for="easy">Easy</label>
+
+			  <input type="radio" id="medium" name="filtercat" value="medium">
+			  <label for="medium">Medium</label>
+
+			  <input type="radio" id="hard" name="filtercat" value="hard">
+			  <label for="hard">Hard</label>
+
+			  <p>Filter by company: </p>
+			  <input type="radio" id="amazon" name="filtercomp" value="amazon">
+			  <label for="amazon">Amazon</label>
+
+			  <input type="radio" id="microsoft" name="filtercomp" value="microsoft">
+			  <label for="microsoft">Microsoft</label>
+
+			  <input type="radio" id="Capgemini" name="filtercomp" value="Capgemini">
+			  <label for="Capgemini">Capgemini</label>
+
+			  <input type="radio" id="infosys" name="filtercomp" value="infosys">
+			  <label for="infosys">Infosys</label>
+
+			  <input type="radio" id="TCS" name="filtercomp" value="TCS">
+			  <label for="TCS">TCS</label>
+
+
+			  <br>
+			  <button type="submit">Filter</button>
+			  
+			  
+		</form>
+		<p><%= alert %></p>
+		<br><br>
+		<div>
+		<% for(var i=0; i< question.length; i++){ %>
+		<form id="display" action="/<%-getFrom-%>/<%=CurrentUser._id%>">
+		
+
+			<%=  question[i].ques %>
+			<br><br>
+
+			<input type="radio" name="options<%- i %>" id="A" value="A">
+			<label for="A"><%= question[i].opt[0].option %></label>
+
+			<br>
+
+			<input type="radio" name="options<%- i %>" id="B" value="B">
+			<label for="B"><%= question[i].opt[1].option %></label>
+
+			<br>
+
+			<input type="radio" name="options<%- i %>" id="C" value="C">
+			<label for="C"><%= question[i].opt[2].option %></label>
+
+			<br>
+
+			<input type="radio" name="options<%- i %>" id="D" value="D">
+			<label for="D"><%= question[i].opt[3].option %></label>
+
+			<br>
+			<br>
+
+			<label for="view" >View answer</label>
+			<input type="radio" value="<%- question[i]._id-%>" class="view" name="view" onclick="document.getElementById('ans<%- i -%>').innerHTML = '<%- question[i].corrAns-%>'">
+
+			<p id="ans<%- i -%>"></p>
+			<br>
+			<button type="submit"> Check </button>
+			<br><br>
+			
+			<p id="result"><%= result[i] %> </p>
+			<br><br>
+		
+			<!-- Button trigger modal -->
+
+<!-- Button trigger modal -->
+			
+			<a href="/discuss/<%=subject%>/<%=question[i]._id%>">Open Discussion Panel</a>
+			
+			
+
+		</form>
+		
+		<% } %>
+	</div>
+		
+</div>
+
+</body>
+
+
+</html>

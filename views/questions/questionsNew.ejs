@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>questions page</title>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+
+
+
+<link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/cyborg/bootstrap.min.css">
+<link rel="stylesheet" href="/stylesheets/app.css">
+</head>
+
+
+
+
+<body class="qlayoutbody">
+	
+	
+<a href="/<%-back%>/<%=CurrentUser._id%>" id="home" style="position:fixed;left:1200px;">Go back to view all questions</a>
+
+<div id="display">
+	
+	<br>
+
+	<% if(question!==undefined){ %>
+		<% for(var i=0; i< question.length; i++){ %>
+		<form>
+		
+
+			<%=  question[i].ques %>
+			<br><br>
+
+			<input type="radio" name="options<%- i %>" id="A" value="A">
+			<label for="A"><%= question[i].opt[0].option %></label>
+
+			<br>
+
+			<input type="radio" name="options<%- i %>" id="B" value="B">
+			<label for="B"><%= question[i].opt[1].option %></label>
+
+			<br>
+
+			<input type="radio" name="options<%- i %>" id="C" value="C">
+			<label for="C"><%= question[i].opt[2].option %></label>
+
+			<br>
+
+			<input type="radio" name="options<%- i %>" id="D" value="D">
+			<label for="D"><%= question[i].opt[3].option %></label>
+
+			<br>
+			<br>
+				<p>View answer</p>
+			<input type="radio" value="<%- question[i]._id-%>" class="view" name="view" onclick="document.getElementById('ans<%- i -%>').innerHTML = '<%- question[i].corrAns-%>'">
+			<label for="view" hidden>view</label>
+
+			<p id="ans<%- i -%>"></p>
+			<br><br>
+			<button type="submit"> 
+			Check </button>
+			<br><br>
+			<%= result[i] %>
+			<br><br>
+		
+			
+			
+			<br><br>
+			<a href="/discuss/<%=subject%>/<%=question[i]._id%>">Open Discussion Panel</a>
+
+			
+
+		</form>
+		
+		<% } %>
+	<% } %>
+		
+		
+	</div>
+	</body>
+</html>
+		

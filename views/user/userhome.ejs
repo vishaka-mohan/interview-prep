@@ -1,0 +1,70 @@
+<%-include('../partials/header')%>
+<div class="container">
+	
+
+<p>
+	</p>
+	<%if(user.DP.data){%>
+
+<img id="UserDp"  src="data:image/<%=user.DP.contentType%>;base64, 
+                     <%=user.DP.data.toString('base64')%>"> 
+<%}%>
+<% var id1 = CurrentUser._id.toString()%>
+<% var id2 = user._id.toString()%>
+
+
+	<div class="infochunk">
+	<ul class="list-group">
+		<span id="headingprofile">WELCOME TO USERS PERSONAL PAGE for <%=user.name%>
+			<span id="friendlink">
+		<%if(id1!=id2){%>
+		<%if(!isfriend){%>
+		<a href="/user/friend/add/<%=user._id%>">Add as friend</a>
+		<%}else{%>
+		<a href="/user/friend/remove/<%=user._id%>">Remove as friend</a>
+		<%}%>
+		<%}%>
+			</span>
+			</span>
+ 
+  <li class="list-group-item list-group-item-success">name:<%=user.name%></li>
+  <li class="list-group-item list-group-item-warning">username:<%=user.username%></li>
+  <li class="list-group-item list-group-item-success">easycount:<%=user.easycount%></li>
+  <li class="list-group-item list-group-item-warning">mediumcount:<%=user.midcount%></li>
+  <li class="list-group-item list-group-item-success">hardcount:<%=user.hardcount%></li>
+  <li class="list-group-item list-group-item-warning">totalcount:<%=user.totalcount%></li>
+  <li class="list-group-item list-group-item-success">rating:<%=user.rating%></li>
+  <li class="list-group-item list-group-item-warning">
+	  friends: 
+		<%user.friends.forEach(function(user){%>
+		<a href="/user/<%=user._id%>"><%=user.username%></a>
+		<%})%>
+	</li>
+</ul>
+		
+	<!--
+	<br>
+	name:<%=user.name%>
+	<br>
+	username:<%=user.username%>
+<br>
+	easycount:<%=user.easycount%>
+<br>
+	midcount:<%=user.midcount%>
+<br>
+	hardcount:<%=user.hardcount%>
+<br>
+	totalcount:<%=user.totalcount%>
+<br>
+	rating:<%=user.rating%>
+<br>
+friends: 
+<%user.friends.forEach(function(user){%>
+<a href="/user/<%=user._id%>"><%=user.username%></a>
+<%})%>
+		</div>
+-->
+<a href="/user/<%-CurrentUser._id-%>/ranklist">Know where you stand among friends</a>
+</div>
+
+<%-include('../partials/footer')%>

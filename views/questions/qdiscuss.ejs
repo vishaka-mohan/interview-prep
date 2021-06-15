@@ -1,0 +1,58 @@
+<!--<a href="/discuss/<%=subject%>/<%=foundq._id%>/comment/new">Add comment</a>-->
+<html>
+	<head>
+		<title>PrepView</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+		<link rel="stylesheet" href="/stylesheets/app.css">
+	</head>
+<body id="qdiscbody">
+<a href="/<%=subject%>/<%=CurrentUser._id%>">Go Back</a>
+<div class="container qdetails">
+
+<h2 id="headingcent">Discussion Panel</h2>
+<br>
+
+<strong>Subject: <%=subject%></strong>
+<br>
+<strong>Question: <%=foundq.ques%></strong>
+<p>
+</p>
+<strong>Options:</strong>
+<br>
+<%for(var i=0;i<4;i++) {%>
+	<%=foundq.opt[i].option%>
+<br>
+<%}%>
+<br>
+<strong>Answer:</strong>
+<%=foundq.corrAns%>
+<br>
+<br>
+		
+	</div>
+	<div class="jumbotron container">
+		
+	
+<h4>Discussion</h4>
+<% if (foundq.comments){%>
+<%foundq.comments.forEach(function(item){%>
+	<a href="/user/<%=item.author.id%>"><%=item.author.username%></a> : <%=item.text%>
+	
+<br>
+<br>
+<%})%>
+<form action="/discuss/<%=subject%>/<%=foundq._id%>/comment/new" method="POST">
+	<strong>Commenting as <%=CurrentUser.username%></strong>
+	 <div class="form-group" style="width:30%;margin:0;border:2px solid black">
+		 
+    <textarea  class="form-control" id="exampleFormControlTextarea1" rows="3" name="text"> </textarea>
+	</div>
+	  <input  class="btn btn-success btn-sm" type="submit">
+</form>
+<%}%>
+</div>
+	
+</body>
+</html>
+
+

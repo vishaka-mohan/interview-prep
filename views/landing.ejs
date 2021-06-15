@@ -1,0 +1,79 @@
+<html>
+	<head>
+		<title>PrepView</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+		<link rel="stylesheet" href="/stylesheets/app.css">
+		<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Staatliches&display=swap" rel="stylesheet">
+		
+	</head>
+	
+	<script>
+		document.addEventListener('DOMContentLoaded',function(event){
+  // array with texts to type in typewriter
+  var dataText = [ "Welcome To Prepview"];
+  
+  // type one text in the typwriter
+  // keeps calling itself until the text is finished
+  function typeWriter(text, i, fnCallback) {
+    // chekc if text isn't finished yet
+    if (i < (text.length)) {
+      // add next character to h1
+     document.querySelector("#sp").innerHTML = text.substring(0, i+1) +'<span aria-hidden="true"></span>';
+
+      // wait for a while and call this function again for next character
+      setTimeout(function() {
+        typeWriter(text, i + 1, fnCallback)
+      }, 150);
+    }
+    // text finished, call callback if there is a callback function
+    else if (typeof fnCallback == 'function') {
+      // call callback after timeout
+      setTimeout(fnCallback, 2500);
+    }
+  }
+  // start a typewriter animation for a text in the dataText array
+   function StartTextAnimation(i) {
+     if (typeof dataText[i] == 'undefined'){
+        setTimeout(function() {
+          StartTextAnimation(0);
+        }, 5000);
+     }
+     // check if dataText[i] exists
+    if (i < dataText[i].length) {
+      // text exists! start typewriter animation
+     typeWriter(dataText[i], 0, function(){
+       // after callback (and whole text has been animated), start next text
+       StartTextAnimation(i + 1);
+     });
+    }
+  }
+  // start the text animation
+  StartTextAnimation(0);
+});
+	</script>
+
+<body id="landingbody">
+	<br>
+	<ul class="nav justify-content-end">
+  <li class="nav-item ">
+    <a class="nav-link active landingbtn" href="/login">Login</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link landingbtn" href="/register">Register</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link landingbtn" href="#">About Us</a>
+  </li>
+</ul>
+	
+	<div id="pos">
+	<h1 id="sp">
+	</h1>
+	</div>
+	<div id="desc">One Platform for all your problems!</div>
+	
+
+
+</body>
+	</html>
+

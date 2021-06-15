@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>add questions page</title>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/cyborg/bootstrap.min.css">
+
+</head>
+<body>
+	<script type="text/javascript" src="../questions.js"></script>
+	
+
+	<form id="question" action="/questions/new" method="post">
+		
+		
+		<p>Select category</p>
+		  <input type="radio" id="dbms" name="category" value="dbms">
+		  <label for="dbms">DBMS</label>
+		  <br>
+		  <input type="radio" id="os" name="category" value="os">
+		  <label for="os">OS</label>
+		  <br>
+		  <input type="radio" id="network" name="category" value="network">
+		  <label for="network">Network</label>
+		  <br>
+		  <input type="radio" id="dsa" name="category" value="dsa">
+		  <label for="dsa">DSA</label>
+		  <br>
+		  <input type="radio" id="aptitude" name="category" value="aptitude">
+		  <label for="aptitude">Aptitude</label>
+
+  		<br>
+
+		<label  for="question">Add new question: </label>
+			
+		<input type="text" name="question" placeholder="add new question" required/>
+
+		<br><br>
+
+		<label for="optionA">Add option A: </label>
+			
+		<input type="text" name="optionA" placeholder="add option A" required/>
+
+		<br><br>
+
+		<label for="optionB">Add option B: </label>
+			
+		<input type="text" name="optionB" placeholder="add option B" required/>
+
+		<br><br>
+
+		<label for="optionC">Add option C: </label>
+			
+		<input type="text" name="optionC" placeholder="add option C" required/>
+
+		<br><br>
+
+		<label for="optionD">Add option D: </label>
+			
+		<input type="text" name="optionD" placeholder="add option D" required/>
+
+		<br><br>
+
+		<label for="correct">Add correct option: </label>
+			
+		<input type="text" name="correct" placeholder="add correct option(A,B,C,D)" required/>
+
+		<br><br>
+
+
+		<label for="level">Add Level of question: </label>
+			
+		<input type="text" name="level" placeholder="add level of question" required/>
+
+		<br><br>
+
+		<label for="company">Add company: </label>
+			
+		<input type="text" name="company" placeholder="add company" required/>
+
+		<br><br>
+
+		<label for="frequency">Add frequency: </label>
+			
+		<input type="number" name="frequency" placeholder="add frequency" required/>
+
+		<br><br>
+
+
+
+
+
+
+
+		<button type="submit"> Add question </button>
+
+
+
+
+	</form>
+	
+	<br><br>	
+	<a href="/">Go back to Home page</a>
+	<br><br>
+	<a href="/questions">Go back to questions page</a>
+		
+
+
+</body>
+
+
+</html>

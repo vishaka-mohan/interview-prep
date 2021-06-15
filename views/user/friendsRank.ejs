@@ -1,0 +1,31 @@
+<link rel="stylesheet" href="/stylesheets/rankList.css">
+
+<body id="grad">
+<a href="/user/<%=CurrentUser._id%>" id="home" style="position:fixed;left:1200px;">Go back to your Profile</a>
+
+<h1>Rankings: </h1>
+
+<% for(var i=0; i< data.length; i++){ %>
+
+
+<div id="login-container">
+  
+  <h1>
+    <%= i+1 %>. 
+	Name: <%= data[i].name %>
+  </h1>
+  <div class="description">
+    Rating: <%= data[i].rating %>
+  </div>
+  
+  <br><br>
+</div>
+<br><br>
+
+
+
+
+
+<% } %>
+
+</body>
